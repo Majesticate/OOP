@@ -1,4 +1,4 @@
-package PointInRectangle;
+package Abstraction.PointInRectangle;
 
 public class Rectangle {
     private Point first;
