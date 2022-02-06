@@ -1,12 +1,20 @@
 package AbstractionExercises.CardSuit;
 
-import java.util.function.Consumer;
-
 public enum Suit {
-    CLUBS,
-    DIAMONDS,
-    HEARTS,
-    SPADES;
+    CLUBS(0),
+    DIAMONDS(13),
+    HEARTS(26),
+    SPADES(39);
+
+    int suitPower;
+
+    Suit(int suitPower) {
+        this.suitPower = suitPower;
+    }
+
+    public int getSuitPower() {
+        return suitPower;
+    }
 
     @Override
     public String toString() {
@@ -14,10 +22,14 @@ public enum Suit {
     }
 
     public static void printAllSuits() {
-        Suit[] values = Suit.values();
         System.out.println("Card Suits:");
+        Suit[] values = Suit.values();
         for (Suit value : values) {
             System.out.println(value.toString());
         }
+    }
+
+    public static Suit getAsSuit(String suitAsString) {
+        return Suit.valueOf(suitAsString.toUpperCase());
     }
 }
