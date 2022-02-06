@@ -1,4 +1,4 @@
-package AbstractionExercises.CardSuit;
+package AbstractionExercises.CardRank;
 
 import java.util.Scanner;
 
@@ -7,8 +7,9 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         String input = scanner.nextLine();
-        if (input.equals("Card Suits")) {
-            Suit.printAllSuits();
+        if (input.equals("Card Ranks")) {
+            Cards.printAllCards();
         }
     }
+
 }
