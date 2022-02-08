@@ -1,21 +1,13 @@
-package EncapsulationExercises;
+package EncapsulationExercises.FootballTeamGenerator;
 
-import EncapsulationExercises.FootballTeamGenerator.Player;
-import EncapsulationExercises.FootballTeamGenerator.Team;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
-        BufferedReader scanner = new BufferedReader(new InputStreamReader(System.in));
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
-        String input = scanner.readLine();
+        String input = scanner.nextLine();
 
         Map<String, Team> teamMap = new LinkedHashMap<>();
 
@@ -62,9 +54,8 @@ public class Main {
             }
 
 
-            input = scanner.readLine();
+            input = scanner.nextLine();
         }
-
 
     }
 
