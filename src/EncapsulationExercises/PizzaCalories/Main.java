@@ -1,8 +1,4 @@
-package EncapsulationExercises;
-
-import EncapsulationExercises.PizzaCalories.Dough;
-import EncapsulationExercises.PizzaCalories.Pizza;
-import EncapsulationExercises.PizzaCalories.Topping;
+package EncapsulationExercises.PizzaCalories;
 
 import java.util.Scanner;
 
