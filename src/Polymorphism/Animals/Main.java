@@ -1,8 +1,4 @@
-package Polymorphism;
-
-import Polymorphism.Animals.Animal;
-import Polymorphism.Animals.Cat;
-import Polymorphism.Animals.Dog;
+package Polymorphism.Animals;
 
 public class Main {
     public static void main(String[] args) {
