@@ -1,6 +1,4 @@
-package InterfacesAndAbstractionExercises;
-
-import InterfacesAndAbstractionExercises.Telephony.Smartphone;
+package InterfacesAndAbstractionExercises.Telephony;
 
 import java.util.Arrays;
 import java.util.List;
@@ -21,4 +19,3 @@ public class Main {
 
     }
 }
-
