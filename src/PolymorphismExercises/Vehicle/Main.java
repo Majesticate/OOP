@@ -1,5 +1,7 @@
 package PolymorphismExercises.Vehicle;
 
+import PolymorphismExercises.VehiclesExtension.Bus;
+
 import java.util.Scanner;
 
 public class Main {
@@ -8,9 +10,11 @@ public class Main {
 
         String[] carTokens = scanner.nextLine().split("\\s+");
         String[] truckTokens = scanner.nextLine().split("\\s+");
+        String[] busTokens = scanner.nextLine().split("\\s+");
 
-        Vehicle car = new Car(Double.parseDouble(carTokens[1]), Double.parseDouble(carTokens[2]));
-        Vehicle truck = new Truck(Double.parseDouble(truckTokens[1]), Double.parseDouble(truckTokens[2]));
+        Vehicle car = new Car(Double.parseDouble(carTokens[1]), Double.parseDouble(carTokens[2]), Double.parseDouble(carTokens[3]));
+        Vehicle truck = new Truck(Double.parseDouble(truckTokens[1]), Double.parseDouble(truckTokens[2]), Double.parseDouble(truckTokens[3]));
+        Bus bus = new Bus(Double.parseDouble(busTokens[1]), Double.parseDouble(busTokens[2]), Double.parseDouble(busTokens[3]));
 
         int n = Integer.parseInt(scanner.nextLine());
 
@@ -32,10 +36,19 @@ public class Main {
                 } else if (command.equals("Refuel")) {
                     truck.refuel(distanceOrLitres);
                 }
+            }else if (typeOfVehicle.equals("Bus")){
+                if (command.equals("Drive")){
+                     bus.drive(distanceOrLitres);
+                }else if (command.equals("DriveEmpty")){
+                    bus.driveEmpty(distanceOrLitres);
+                }else if (command.equals("Refuel")){
+                    bus.refuel(distanceOrLitres);
+                }
             }
         }
 
         System.out.printf("Car: %.2f%n", car.getFuelQuantity());
-        System.out.printf("Truck: %.2f", truck.getFuelQuantity());
+        System.out.printf("Truck: %.2f%n", truck.getFuelQuantity());
+        System.out.printf("Bus: %.2f", bus.getFuelQuantity());
     }
 }

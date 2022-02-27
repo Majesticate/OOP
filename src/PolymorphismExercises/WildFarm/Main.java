@@ -1,13 +1,10 @@
-package PolymorphismExercises;
-
-import PolymorphismExercises.WildFarm.*;
+package PolymorphismExercises.WildFarm;
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
 
         String input = scanner.nextLine();
 
@@ -27,21 +24,17 @@ public class Main {
 
             Food food = new Food(typeOfFood, foodQuantity);
 
-            boolean ifCurrentAnimalEatCurrentFood = true;
-
             if (tokensOfAnimal.length == 4) {
                 if (animalType.equals("Zebra")) {
                     animal = new Zebra(animalType, nameOfAnimal, weightOfAnimal, livingRegion);
-                    ifCurrentAnimalEatCurrentFood = isVegetableEater(animal, food);
+                    isVegetableEater(animal, animalType, food);
                 } else if (animalType.equals("Mouse")) {
                     animal = new Mouse(animalType, nameOfAnimal, weightOfAnimal, livingRegion);
-                    ifCurrentAnimalEatCurrentFood = isVegetableEater(animal, food);
+                    isVegetableEater(animal, animalType, food);
                 } else if (animalType.equals("Tiger")) {
                     animal = new Tiger(animalType, nameOfAnimal, weightOfAnimal, livingRegion);
                     if (food.getFoodType().equals("Meat")) {
                         animal.setFoodEaten(food.getQuantity());
-                    }else {
-                        ifCurrentAnimalEatCurrentFood = false;
                     }
                 }
             } else if (tokensOfAnimal.length == 5) {
@@ -50,9 +43,6 @@ public class Main {
                 animal.setFoodEaten(food.getQuantity());
             }
             animal.makeSound();
-            if (!ifCurrentAnimalEatCurrentFood){
-                System.out.printf("%ss are not eating that type of food!%n", animalType);
-            }
             System.out.println(animal.toString());
 
             input = scanner.nextLine();
@@ -60,11 +50,11 @@ public class Main {
 
     }
 
-    private static boolean isVegetableEater(Animal animal , Food food) {
+    private static void isVegetableEater(Animal animal, String animalType, Food food) {
         if (food.getFoodType().equals("Vegetable")) {
             animal.setFoodEaten(food.getQuantity());
-            return true;
+        } else {
+            System.out.printf("%ss are not eating that type of food!%n", animalType);
         }
-        return false;
     }
 }

@@ -2,8 +2,8 @@ package PolymorphismExercises.Vehicle;
 
 
 public class Truck extends Vehicle {
-    public Truck(double fuelQuantity, double fuelConsumptionInLitersPerKm) {
-        super(fuelQuantity, fuelConsumptionInLitersPerKm);
+    public Truck(double fuelQuantity, double fuelConsumptionInLitersPerKm, double fuelCapacity) {
+        super(fuelQuantity, fuelConsumptionInLitersPerKm,fuelCapacity);
     }
 
     @Override
@@ -26,6 +26,10 @@ public class Truck extends Vehicle {
 
     @Override
     public void refuel(double litres) {
+        if (litres <= 0){
+            System.out.println("Fuel must be a positive number");
+            return;
+        }
         setFuelQuantity(getFuelQuantity() + (litres * 0.95));
     }
 }
